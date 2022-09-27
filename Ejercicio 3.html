@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO 3</title>
+
+    <style>
+    body{
+        background: rgb(236, 232, 232);
+    }
+    </style>
+
+</head>
+<body>
+    <h1>EJERCICIO 3</h1>
+   <form name="form1">
+
+    <p>¿Por qué los gatos son las mejores mascotas?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p1"> 1. Porque lo son</p>
+    <p><input type="radio" name="p1"> 2. Porque los gatos mandan y más cuado están gorditos</p>
+    <p><input type="radio" name="p1"> 3. Porque los gatos nunca trabajarían para la policía</p>
+    <p><input type="radio" name="p1"> 4. TODAS LAS RESPUESTAS SON CORRECTAS</p>
+
+    <br>
+    <br>
+
+    <p>¿Los perros montarían una mafia perruna?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p2"> 1. No, son demasiado vagos</p>
+    <p><input type="radio" name="p2"> 2. Algo traman</p>
+    <p><input type="radio" name="p2"> 3. WOF, WOF</p>
+    <p><input type="radio" name="p2"> 4. Un perro nunca haría eso</p> 
+
+    <br>
+    <br>
+
+    <p>¿Por qué los capibaras le caen bien a todo el mundo?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p3"> 1. Porque son capibaras</p>
+    <p><input type="radio" name="p3"> 2. Todas son correctas</p>
+    <p><input type="radio" name="p3"> 3. Los capibaras mandan y no tu banda</p>
+    <p><input type="radio" name="p3"> 4. PORQUE LOS PERROS LAS ACEPTARON EN SU MAFIA</p>
+
+    <br>
+    <br>
+
+    <p>¿Los capibaras son buenos amigos de Spiderman?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p4"> 1. Spiderman y los capibaras son una buena combinación</p>
+    <p><input type="radio" name="p4"> 2. A NADIE LE GUSTAN LOS SOPLONES</p>
+    <p><input type="radio" name="p4"> 3. Nadie ha dicho nada de Peter Parker</p>
+    <p><input type="radio" name="p4"> 4. No le digas nada a la mafia perruna</p>
+
+    <br>
+    <br>
+
+    <p>¿Cuál es la mejor serie de 2022?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p5"> 1. House of Dragon</p>
+    <p><input type="radio" name="p5"> 2. Los anillos del poder</p>
+    <p><input type="radio" name="p5"> 3. Pocahontas</p>
+    <p><input type="radio" name="p5"> 4. CYBERPUNK 2077</p>
+
+    <br>
+    <br>
+
+    <p>¿Quién es el mejor profesor de ASIR?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p6"> 1. Samuel Arranz</p>
+    <p><input type="radio" name="p6"> 2. JOSE MANUEL PRIETO</p>
+    <p><input type="radio" name="p6"> 3. Carlos Contreras</p>
+    <p><input type="radio" name="p6"> 4. Maria Inglés</p>
+
+    <br>
+    <br>
+
+    <p>¿Cuál es la mejor fruta?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p7"> 1. Pera</p>
+    <p><input type="radio" name="p7"> 2. Manzana</p>
+    <p><input type="radio" name="p7"> 3. Mandarina</p>
+    <p><input type="radio" name="p7"> 4. SANDÍA</p>
+
+    <br>
+    <br>
+
+    <p>¿Los perros y los gatos se pueden llevar bien?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p8"> 1. Sí</p>
+    <p><input type="radio" name="p8"> 2. No</p>
+    <p><input type="radio" name="p8"> 3. LA MAFIA PERRUNA NO ME DEJA HABLAR SOBRE ESTO </p>
+    <p><input type="radio" name="p8"> 4. Es probable </p>
+
+    <br>
+    <br>
+
+    <p>¿Tienes alguna obsesión con una mafia perruna?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p9"> 1. Sí</p>
+    <p><input type="radio" name="p9"> 2. No</p>
+    <p><input type="radio" name="p9"> 3. MIAU, MIAU</p>
+    <p><input type="radio" name="p9"> 4. Es probable</p>
+
+    <br>
+    <br>
+
+    <p>¿Qué 3 cosas te llevarías a una isla desierta?</p>
+    <p>Selecciona la respuesta correcta: </p>
+    <p><input type="radio" name="p10"> 1. Esta pregunta no me gusta</p>
+    <p><input type="radio" name="p10"> 2. Esto no es una pregunta</p>
+    <p><input type="radio" name="p10"> 3. No pienso contestar</p>
+    <p><input type="radio" name="p10"> 4. CAPIBARAS (me da igual que no sean 3 cosas)</p>
+
+    
+    <p id="boton"></p>
+    <input type="button" value="Finalizar" onclick="calificar()"></p>
+    </form>
+
+   <script>
+       function calificar(){
+
+        contador = 0
+       
+        if(document.form1.p1[3].checked){
+                contador = contador + 1 
+            }
+
+        if(document.form1.p2[2].checked){
+                contador = contador + 1   
+            } 
+
+        if(document.form1.p3[3].checked){
+                contador = contador + 1
+            }
+
+        if(document.form1.p4[1].checked){
+                contador = contador + 1
+            }
+
+        if(document.form1.p5[3].checked){
+                contador = contador + 1
+            }
+
+        if(document.form1.p6[1].checked){
+                contador = contador + 1
+            }
+
+        if(document.form1.p7[3].checked){
+                contador = contador + 1
+            } 
+
+        if(document.form1.p8[2].checked){
+                contador = contador + 1
+            }
+
+        if(document.form1.p9[2].checked){
+                contador = contador + 1
+            }
+        
+        if(document.form1.p10[3].checked){
+                contador = contador + 1
+            } 
+        
+        
+
+        alert("Tu nota es un " + contador + "/10")
+       }
+
+
+   </script>
+</body>
+</html>

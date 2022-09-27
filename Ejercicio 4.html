@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+    <style>
+    #t1
+        {
+            text-align: left;
+            background-color: orange;
+            color: blue;
+        }
+        
+    #cuadro
+        {
+            background-color: yellow;
+            border: solid;
+        }  
+    #cuadro2
+        {
+            border: 0px solid #2e518b; 
+           
+        }
+    #botones
+        {
+            border: 0px solid #2e518b; 
+            padding: 20px; 
+            background-color: #ffffff; 
+            color: blue; 
+            text-transform: uppercase; 
+            font-family: 'Helvetica', sans-serif; 
+            border-radius: 0px; 
+            text-decoration: underline;
+        }
+
+</style>
+</head>
+<body>
+<div id="t1">    
+    <h1> Solicitud del Informe de Vida Laboral</h1>
+</div>
+
+    <form id="form1">
+    <fieldset id ="cuadro">
+        <table>
+            <td align="center">
+
+                <p>Nombre:</p>
+                <p>Primer Apellido:</p>
+                <p>Segundo apellido:</p>
+                <p>Correo Electrónico:</p>
+                <p>Número de afiliado a la S.S. :</p>
+
+            </td>  
+            <td>
+
+                <p id="n1"><input type="text" id="nombre" name="nombre"> </p> 
+                <p><input type="text" id="apellido1" name="primerapellido"> </p> 
+                <p> <input type="text" id="apellido2" name="segundoapellido"> </p> 
+                <p> <input type="text" id="correo" name="correo"> <span id="correoOK"> </span> </p> 
+
+            <p> <select name="afiliado">
+                <option> Seleccione </option>  
+                <option> A Coruña </option> 
+                 <option> Madrid </option> </select> /
+                <input type="text" id="ss1" name="correo"> /
+                <input type="text" id="ss2" name="correo"> </p>   
+            </td>
+            
+            </table>
+        </fieldset> 
+        <div id="cuadro2">
+            <p> <button id = "botones" type="submit" onclick="verificacion(), digitos()"> Enviar</p>
+            <p> <button  id= "botones" type="reset">borrar </p>
+        </div>
+        
+        </form>
+        <script>
+        document.getElementById("correo").addEventListener("input", function() 
+            {
+                campo = event.target;
+                valido = document.getElementById("correoOK");
+                
+                emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+            if (emailRegex.test(campo.value)) 
+            {
+            valido.innerText = "Correo Válido";
+            } 
+            else 
+            {
+            valido.innerText = "Correo Invalido";
+            }
+        });
+
+        function verificacion()
+        {
+        var nombre = document.getElementById("nombre").value;
+        var apellido1 = document.getElementById("apellido1").value;
+        var apellido2 = document.getElementById("apellido2").value;
+        var correo =document.getElementById("correo").value;
+        var ss1 =document.getElementById("ss1").value;
+        var ss2 =document.getElementById("ss2").value;
+        var correo = document.getElementById("correo").value; 
+        if (nombre <= 0)
+            {
+                alert("El campo NOMBRE no puede estar vacío")
+            }
+
+        if (apellido1 <= 0)
+            {
+                alert("El campo PRIMER APELLIDO no puede estar vacío")
+            }
+        if (apellido2 <= 0)
+            {
+                alert("El campo SEGUNDO APELLIDO no puede estar vacío")
+            }
+        if (correo <= 0)
+            {
+                alert("El campo CORREO  no puede estar vacío")
+            }
+        if (ss1 <= 0)
+            {
+                alert("El campo 1 de la SS no puede estar vacío")
+            }
+        if (ss2 <= 0)
+            {
+                alert("El campo 2 de la SS no puede estar vacío")
+            }
+        }
+
+        function digitos(){
+        var ss1 = document.getElementById("ss1").value;
+        var ss2 = document.getElementById("ss2").value;
+            if (isNaN(ss1)) 
+            {
+                alert("El PRIMER campo de la SS solo admite números")
+            }
+            if (isNaN(ss2)){
+                alert("El SEGUNDO campo de la SS solo admite números")
+            }
+            if (ss1.length > 7 || ss1.length < 7)
+                {
+                    alert("El primer campo de la SS debe de tener 7 dígitos")
+                }
+
+            if (ss2.length > 2 || ss2.length > 1)
+                {
+                    alert("El SEGUNDO campo de la SS solo puede tener 1 o 2 dígitos")
+                }
+        }
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO 2</title>
+    <style>
+    body{
+        background-color:aliceblue; 
+    }
+    h1{
+        text-align: center;
+    }
+    #form1{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+            }
+    </style>
+</head>
+<body>
+    <h1>EJERCICIO 2</h1>
+   <form id="form1" name="form1">
+        <table border = "dotted black 4px">
+            <tr><td>Configuración del coche: </td></tr>
+            <tr>
+                <td><p>Tipo de motor: </p>
+                <p>
+                    <input type="radio" name="motor" id="g"> Gasolina
+                    <input type="radio" name="motor" id="d"> Diesel (+1500 E)
+                    <input type="radio" name="motor" id="h"> Híbrido (+3000 E)
+                </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Tipo de puertas: </p>
+                <p>
+                    <input type="radio" name="puertas" id="3p"> 3 puertas (-2000 E) (Solo con gasolina )
+                    <input type="radio" name="puertas" id="5p"> 5 puertas 
+                    <input type="radio" name="puertas" id="fa"> Familiar(1500 E)
+                </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Tipo de pintura: </p>
+                <p>
+                    <input type="radio" name="pintura" id="r"> Rojo
+                    <input type="radio" name="pintura" id="v"> Verde
+                    <input type="radio" name="pintura" id="na"> Naranja
+                    <input type="radio" name="pintura" id="b"> Blanco (-500 E)
+                    <input type="radio" name="pintura" id="ne"> Negro (-600 E)
+                </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p>Seleccionar las que se deseen: </p>
+                <p><input type="checkbox" name="metalizado" id="me"> Metalizado (+ 750 E) (Solo Rojo,Verde o Naranja)</p>
+                <p><input type="checkbox" name="llantas" id="lla"> Llantas (+ 200 E)</p>
+                <p><input type="checkbox" name="climatizador" id="cli"> Climatizador (+ 800 E)</p>
+                <p><input type="checkbox" name="gps" id="gps"> GPS (+ 340 E)</p>
+                <p><input type="checkbox" name="dvd" id="dvd"> DVD (+ 800 E) (Solo modelo Familiar)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p id="final"> Total a cobrar</p>
+                <p align="center"><input type="button" value="enviar" onclick="calcular()"></p>
+                </td>
+            </tr>
+        </table>
+   </form>
+   <script>
+
+   function calcular() 
+   {
+        var final = 12000
+        if (document.form1.motor[0].checked)
+        {
+            final = final
+        }
+        if (document.form1.motor[1].checked)
+        {
+            final = final + 1500
+        }
+        if (document.form1.motor[2].checked)
+        {
+            final = final + 3000
+        }
+        if (document.form1.puertas[0].checked)
+            {
+               if(document.form1.motor[0].checked)
+               {
+                   final = final - 2000
+               } 
+               else 
+               {
+                   alert("Esta opción tan solo es válida en el coche de 3 puertas si el coche utiliza gasolina")
+               }
+
+            }
+        if (document.form1.puertas[1].checked)
+        {
+            final = final
+        }
+        if (document.form1.puertas[2].checked)
+        {
+            final = final + 15000
+        }
+        if (document.form1.pintura[0].checked)
+        {
+            final = final
+        }
+        if (document.form1.pintura[1].checked)
+        {
+            final = final
+        }
+        if (document.form1.pintura[2].checked)
+        {
+            final = final
+        }
+
+        if (document.form1.pintura[3].checked)
+        {
+            final = final - 500
+        }
+        if (document.form1.pintura[4].checked)
+        {
+            final = final - 600
+        }
+        if (document.form1.metalizado.checked)
+        {
+            if(document.form1.pintura[0].checked || document.form1.pintura[1].checked || document.form1.pintura[2].checked)
+                {
+                    final = final + 750
+                }
+                else 
+               {
+                   alert("Esta opción tan solo está disponible si el color es Rojo, verde o Naranja")
+               }
+
+        }
+
+
+        if (document.form1.llantas.checked)
+        {
+            final = final + 200
+        }
+        if (document.form1.climatizador.checked)
+        {
+            final = final + 800
+        }
+        if (document.form1.gps.checked)
+        {
+            final = final + 340
+        }
+        if (document.form1.dvd.checked)
+        {   
+            if(document.form1.puertas[3].checked)
+                {
+                    final = final + 800
+                } 
+            else 
+               {
+                   alert("Esta opción tan solo es válida en el modelo Familiar")
+               }
+
+        }
+
+        document.getElementById("final").innerHTML = final + "€"
+        
+   }
+    
+   </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+    <style>
+    h1{
+        text-align: center;
+        color: #1c4e6f;
+        font-weight: normal;
+        font-size: 40px;
+        font-family: Arial;
+        text-transform: uppercase;
+    }
+
+    #cuerpo
+        {
+            margin: auto;
+            padding:20px;
+            background-color:#1c4e6f;
+            width:252px;
+            height:380px;
+            border-radius: 25px;
+        }
+
+    #boton
+        {
+            width:60px;
+            height: 60px;
+            font-size: 25px;
+        }
+
+    #resultado 
+        { 
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 30px;
+            width:240px;
+            height: 100px;
+            line-height: 100px;
+            background-color:#fff;
+            border-radius: 25px;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA</h1>
+    <div id="cuerpo">
+        <form name="calculadora">
+            <input id="resultado" type="textfield" name="cuadro" value=""  >
+            <br>
+            <input id="boton" type="button" value="1" onclick="document.calculadora.cuadro.value += '1' ">
+            <input id="boton" type="button" value="2" onclick="document.calculadora.cuadro.value += '2' ">
+            <input id="boton" type="button" value="3" onclick="document.calculadora.cuadro.value += '3' ">
+            <input id="boton" type="button" value="+" onclick="document.calculadora.cuadro.value += '+' ">
+            <br>
+            <input id="boton" type="button" value="4" onclick="document.calculadora.cuadro.value += '4' "> 
+            <input id="boton" type="button" value="5" onclick="document.calculadora.cuadro.value += '5' ">
+            <input id="boton" type="button" value="6" onclick="document.calculadora.cuadro.value += '6' ">
+            <input id="boton" type="button" value="-" onclick="document.calculadora.cuadro.value += '-' ">
+            <br>
+            <input id="boton" type="button" value="7" onclick="document.calculadora.cuadro.value += '7' "> 
+            <input id="boton" type="button" value="8" onclick="document.calculadora.cuadro.value += '8' ">
+            <input id="boton" type="button" value="9" onclick="document.calculadora.cuadro.value += '9' ">
+            <input id="boton" type="button" value="X" onclick="document.calculadora.cuadro.value += '*' ">
+            <br>
+            <input id="boton" type="reset" value="C"> 
+            <input id="boton" type="button" value="0" onclick="document.calculadora.cuadro.value += '0' ">
+            <input id="boton" type="button" value="=" onclick="document.calculadora.cuadro.value = eval(document.calculadora.cuadro.value)">
+            <input id="boton" type="button" value="/" onclick="document.calculadora.cuadro.value += '/' ">
+        </form>
+    </div>
+<script>
+
+</script>
+</body>
+</html>

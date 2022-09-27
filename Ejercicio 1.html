@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <style>
+        #cuadro {
+            width: 40%;
+            height: 40vh;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>EJERCICIO 1</h1>
+    <div id="cuadro">
+    <font color=""  face="" id="cambiar"> ESTE ES EL TEXTO QUE CAMBIA </font>
+    </div>
+    <button type="button" onclick="changeText()"> Cambiar texto</button>
+    <br>
+    <button type="button" onclick="changeColor()"> Cambiar color de fondo</button>
+    <br>
+    <button type="button" onclick="changeTextColor()"> Cambiar tipo y color de letra</button>
+
+    <script>
+        function changeText()
+          {
+              var cambio = prompt("Introduce un texto: ")
+              document.getElementById("cambiar").innerHTML = cambio 
+          }
+      function changeColor()
+          {
+              var color = prompt("Introduce el color de fondo: ")
+              document.getElementById("cuadro").style.backgroundColor = color;
+  
+          }
+        function changeTextColor()
+          {
+            var textcolor = prompt("Introduce el color de letra: ")
+            var textfont = prompt("Introduce la fuente del texto: ")
+            document.getElementById("cambiar").color = textcolor
+            document.getElementById("cambiar").face = textfont
+            
+          }
+      
+      </script>
+</body>
+</html>
